@@ -32,7 +32,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN", "8212847031:AAHZBCFwmN-SwexiXGjsWXHa5kuU
 CHANNEL_ID = os.environ.get("CHANNEL_ID", "@onehima")
 
 # 欢迎消息配图（可以是产品/品牌 banner 图，网络 URL 或本地路径）
-WELCOME_PHOTO = "https://drive.google.com/uc?export=view&id=1wI7GRD9QOP6JNp_j51ixpbAcsafiqpi4"
+WELCOME_PHOTO = "https://npl11nepal.com/wp-content/uploads/2026/08/npl11-online-slots-nepal.webp"
 
 # 店铺链接
 SHOP_LINK = "https://www.1hima.com/en-np?aff=f1bf9c1ca5"
