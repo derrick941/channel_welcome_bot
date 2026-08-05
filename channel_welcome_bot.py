@@ -26,16 +26,16 @@ from telegram.ext import (
 # ========== 基本配置 ==========
 
 # 建议用环境变量传入，而不是写死在代码里（Railway 部署时在 Variables 里设置 BOT_TOKEN）
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "你的BOT_TOKEN放这里")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8212847031:AAHZBCFwmN-SwexiXGjsWXHa5kuU2NTbmyE")
 
 # 你的频道 ID 或 @username（比如 "@your_channel" 或者数字 ID 如 -1001234567890）
-CHANNEL_ID = os.environ.get("CHANNEL_ID", "@your_channel")
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "@onehima")
 
 # 欢迎消息配图（可以是产品/品牌 banner 图，网络 URL 或本地路径）
-WELCOME_PHOTO = "https://example.com/your-banner.jpg"
+WELCOME_PHOTO = "https://drive.google.com/uc?export=view&id=1wI7GRD9QOP6JNp_j51ixpbAcsafiqpi4"
 
 # 店铺链接
-SHOP_LINK = "https://your-shop-link.com"
+SHOP_LINK = "https://www.1hima.com/en-np?aff=f1bf9c1ca5"
 
 # 多久批量发一次欢迎消息（秒），比如 3600 = 每小时汇总一次
 BATCH_INTERVAL_SECONDS = 3600
