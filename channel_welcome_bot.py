@@ -26,19 +26,19 @@ from telegram.ext import (
 # ========== 基本配置 ==========
 
 # 建议用环境变量传入，而不是写死在代码里（Railway 部署时在 Variables 里设置 BOT_TOKEN）
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8212847031:AAHZBCFwmN-SwexiXGjsWXHa5kuU2NTbmyE")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "你的BOT_TOKEN放这里")
 
 # 你的频道 ID 或 @username（比如 "@your_channel" 或者数字 ID 如 -1001234567890）
-CHANNEL_ID = os.environ.get("CHANNEL_ID", "@onehima")
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "@your_channel")
 
 # 欢迎消息配图（可以是产品/品牌 banner 图，网络 URL 或本地路径）
-WELCOME_PHOTO = "https://npl11nepal.com/wp-content/uploads/2026/08/npl11-online-slots-nepal.webp"
+WELCOME_PHOTO = "https://example.com/your-banner.jpg"
 
 # 店铺链接
-SHOP_LINK = "https://www.1hima.com/en-np?aff=f1bf9c1ca5"
+SHOP_LINK = "https://your-shop-link.com"
 
 # 多久批量发一次欢迎消息（秒），比如 3600 = 每小时汇总一次
-BATCH_INTERVAL_SECONDS = 60
+BATCH_INTERVAL_SECONDS = 3600
 
 # ========== 逻辑部分，一般不需要改 ==========
 
@@ -64,9 +64,18 @@ async def on_chat_member_update(update: Update, context: ContextTypes.DEFAULT_TY
     # 从 "left"/"kicked"/"restricted" 变成 "member" 视为新加入
     if old_status in ("left", "kicked") and new_status == "member":
         user = result.new_chat_member.user
-        name = user.full_name or user.username or f"用户{user.id}"
-        pending_new_members.append(name)
-        logger.info(f"检测到新成员加入：{name}")
+        display_name = user.full_name or user.username or f"用户{user.id}"
+
+        if user.username:
+            # 有公开 username -> 用 @username，Telegram 会自动变成可点击、可通知的链接
+            mention = f"@{user.username}"
+        else:
+            # 没有 username -> 用 HTML mention 链接，点击会跳转到该用户资料
+            # （不一定能触发推送通知，但可以点进去看主页）
+            mention = f'<a href="tg://user?id={user.id}">{display_name}</a>'
+
+        pending_new_members.append(mention)
+        logger.info(f"检测到新成员加入：{display_name}")
 
 
 async def send_batch_welcome(context: ContextTypes.DEFAULT_TYPE):
