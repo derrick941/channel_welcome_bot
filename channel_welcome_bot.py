@@ -91,12 +91,12 @@ async def send_batch_welcome(context: ContextTypes.DEFAULT_TYPE):
         f"🎉 <b>🔥 WELCOME TO 1HIMA NP！ 🇳🇵🎰</b>\n\n"
         f"You’re in the right place — official access + exclusive bonus for new players!\n\n"
         f"🎁 New Member Starter Pack:\n"
-        f"- 7-Day Daily Mission"\n"
+        f"- 7-Day Daily Mission\n"
         f"- 50% Live Welcome Bonus"\n"
-        f"- Daily Rebate"\n"
-        f"- Verify Bonus"\n\n"
-         f"✅ OFFICIAL 1WIN LINK"\n"
-         f"👉 https://shorturl.at/UyFw9"\n"
+        f"- Daily Rebate\n"
+        f"- Verify Bonus\n\n"
+         f"✅ OFFICIAL 1WIN LINK\n"
+         f"👉 https://shorturl.at/UyFw9\n"
     )
 
     keyboard = [[InlineKeyboardButton("🛒 Play On Telegram", url=SHOP_LINK)]]
