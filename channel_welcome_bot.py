@@ -38,7 +38,7 @@ WELCOME_PHOTO = "https://npl11nepal.com/wp-content/uploads/2026/08/npl11-online-
 SHOP_LINK = "https://www.1hima.com/en-np?aff=f1bf9c1ca5"
 
 # 多久批量发一次欢迎消息（秒），比如 3600 = 每小时汇总一次
-BATCH_INTERVAL_SECONDS = 3600
+BATCH_INTERVAL_SECONDS = 60
 
 # ========== 逻辑部分，一般不需要改 ==========
 
