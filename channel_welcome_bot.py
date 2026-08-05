@@ -25,20 +25,20 @@ from telegram.ext import (
 
 # ========== 基本配置 ==========
 
-# 建议用环境变量传入，而不是写死在代码里（Railway 部署时在 Variables 里设置 BOT_TOKEN）
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "你的BOT_TOKEN放这里")
+## 建议用环境变量传入，而不是写死在代码里（Railway 部署时在 Variables 里设置 BOT_TOKEN）
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8212847031:AAHZBCFwmN-SwexiXGjsWXHa5kuU2NTbmyE")
 
 # 你的频道 ID 或 @username（比如 "@your_channel" 或者数字 ID 如 -1001234567890）
-CHANNEL_ID = os.environ.get("CHANNEL_ID", "@your_channel")
+CHANNEL_ID = os.environ.get("CHANNEL_ID", "@onehima")
 
 # 欢迎消息配图（可以是产品/品牌 banner 图，网络 URL 或本地路径）
-WELCOME_PHOTO = "https://example.com/your-banner.jpg"
+WELCOME_PHOTO = "https://drive.google.com/uc?export=view&id=1wI7GRD9QOP6JNp_j51ixpbAcsafiqpi4"
 
 # 店铺链接
-SHOP_LINK = "https://your-shop-link.com"
+SHOP_LINK = "https://t.me/onehime_bot/playnow"
 
 # 多久批量发一次欢迎消息（秒），比如 3600 = 每小时汇总一次
-BATCH_INTERVAL_SECONDS = 3600
+BATCH_INTERVAL_SECONDS = 60
 
 # ========== 逻辑部分，一般不需要改 ==========
 
@@ -87,13 +87,19 @@ async def send_batch_welcome(context: ContextTypes.DEFAULT_TYPE):
 
     names = "、".join(pending_new_members)
     caption = (
-        f"🎉 <b>欢迎新朋友加入！</b>\n\n"
-        f"欢迎：{names}\n\n"
-        f"感谢关注，这里持续更新优质 3C 电子产品，"
-        f"新品、优惠信息第一时间同步给大家！"
+       f"WELCOME：{names}\n\n"
+        f"🎉 <b>🔥 WELCOME TO 1HIMA NP！ 🇳🇵🎰</b>\n\n"
+        f"You’re in the right place — official access + exclusive bonus for new players!\n\n"
+        f"🎁 New Member Starter Pack:\n"
+        f"- 7-Day Daily Mission"\n"
+        f"- 50% Live Welcome Bonus"\n"
+        f"- Daily Rebate"\n"
+        f"- Verify Bonus"\n\n"
+         f"✅ OFFICIAL 1WIN LINK"\n"
+         f"👉 https://shorturl.at/UyFw9"\n"
     )
 
-    keyboard = [[InlineKeyboardButton("🛒 去逛店铺", url=SHOP_LINK)]]
+    keyboard = [[InlineKeyboardButton("🛒 Play On Telegram", url=SHOP_LINK)]]
     reply_markup = InlineKeyboardMarkup(keyboard)
 
     await context.bot.send_photo(
